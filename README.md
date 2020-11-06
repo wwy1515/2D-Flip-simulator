@@ -8,6 +8,9 @@ Guide:
 3. create a 'external' folder under the path: Falcor\Source\Samples\GridFluidSim\ and clone the latest eigen library there.
 4. build(There will be some error because of warnings given by VS, just ignore them).
 
-To do list: 1.extend the simulator to 3D.
-            2.add vorticity confinement.
-            3.coupling dynamic rigid bodies.
+To do list: 
+ 1.Extend the simulator to 3D. 
+ 2.Add levelset methods so that simulating smoke will be supported. Add a MacCormack method solver for advecting smoke.
+ 3.Add vorticity confinement or other post-processing techniques.
+ 4.Coupling dynamic rigid bodies.
+ 5.Add openVDB support.
