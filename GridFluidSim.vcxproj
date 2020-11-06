@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="core\fluid\fluidsim.cpp" />
+    <ClCompile Include="GridFluidSim.cpp" />
+    <ClCompile Include="ParticleRenderPass.cpp" />
+    <ClCompile Include="SdfRenderPass.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="core\fluid\fluidsim.h" />
+    <ClInclude Include="core\util\array1.h" />
+    <ClInclude Include="core\util\array2.h" />
+    <ClInclude Include="core\util\array2_utils.h" />
+    <ClInclude Include="core\util\Parallel.h" />
+    <ClInclude Include="core\util\Timer.h" />
+    <ClInclude Include="core\util\util.h" />
+    <ClInclude Include="core\util\vec.h" />
+    <ClInclude Include="GridFluidSim.h" />
+    <ClInclude Include="ParticleRenderPass.h" />
+    <ClInclude Include="SdfRenderPass.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Falcor\Falcor.vcxproj">
+      <Project>{2c535635-e4c5-4098-a928-574f0e7cd5f9}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ShaderSource Include="ParticleRenderPass.cs.slang" />
+    <ShaderSource Include="ParticleRenderPass.ps.slang" />
+    <ShaderSource Include="SdfRenderPass.cs.slang" />
+    <ShaderSource Include="SdfRenderPass.ps.slang" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A18626C1-3E8C-4954-B8F4-B735F818DB93}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>GridFluidSim</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="..\..\Falcor\Falcor.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="..\..\Falcor\Falcor.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <ShaderSourceSubDir>Shaders\Samples\$(ProjectName)</ShaderSourceSubDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <ShaderSourceSubDir>Shaders\Samples\$(ProjectName)</ShaderSourceSubDir>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>$(FALCOR_CORE_DIRECTORY)\Samples\GridFluidSim\external\eigen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OpenMPSupport>true</OpenMPSupport>
+      <DisableSpecificWarnings>4819;4267;4244;4311;4302;4018;4101;4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>$(FALCOR_CORE_DIRECTORY)\Samples\GridFluidSim\external\eigen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4819;4267;4244;4311;4302;4018;4101;4996</DisableSpecificWarnings>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

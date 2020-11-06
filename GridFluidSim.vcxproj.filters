@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="GridFluidSim.cpp" />
+    <ClCompile Include="ParticleRenderPass.cpp" />
+    <ClCompile Include="SdfRenderPass.cpp" />
+    <ClCompile Include="core\fluid\fluidsim.cpp">
+      <Filter>core\fluid</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GridFluidSim.h" />
+    <ClInclude Include="ParticleRenderPass.h" />
+    <ClInclude Include="core\util\Timer.h">
+      <Filter>core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="SdfRenderPass.h" />
+    <ClInclude Include="core\fluid\fluidsim.h">
+      <Filter>core\fluid</Filter>
+    </ClInclude>
+    <ClInclude Include="core\util\array1.h">
+      <Filter>core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="core\util\array2.h">
+      <Filter>core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="core\util\array2_utils.h">
+      <Filter>core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="core\util\util.h">
+      <Filter>core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="core\util\vec.h">
+      <Filter>core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="core\util\Parallel.h">
+      <Filter>core\util</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="core">
+      <UniqueIdentifier>{dae8fba4-72cb-4a3b-819c-486299c57f7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\util">
+      <UniqueIdentifier>{11178c8b-fc84-43f7-8c24-17a0aa104a56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\fluid">
+      <UniqueIdentifier>{07bfec99-2dfd-432a-b5e6-c55847df1a69}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ShaderSource Include="ParticleRenderPass.ps.slang" />
+    <ShaderSource Include="ParticleRenderPass.cs.slang" />
+    <ShaderSource Include="SdfRenderPass.cs.slang" />
+    <ShaderSource Include="SdfRenderPass.ps.slang" />
+  </ItemGroup>
+</Project>
