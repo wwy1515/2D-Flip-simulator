@@ -1,1 +1,7 @@
 2D-Flip-simulator
+
+Guide:
+1. Build a VS Falcor project named GridFluidSim under Falcor\Source\Samples with [Falcor](https://github.com/NVIDIAGameWorks/Falcor)
+2. clone all the files into the folder expect git files.
+3. create a 'external' folder under the path: Falcor\Source\Samples\GridFluidSim\ and clone the latest eigen library there.
+4. build(There will be some error because of warnings given by VS, just ignore them).
