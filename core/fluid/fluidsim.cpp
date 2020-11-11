@@ -182,16 +182,14 @@ void FluidSim::transfer_grid2particles()
     }
 
 }
-
 void FluidSim::transfer_particles2grid()
 {
-    //clear previous frame data
+
     u.assign(u.ni, u.nj, 0.0f);
     v.assign(v.ni, v.nj, 0.0f);
     u_flip_weights.assign(u.ni, u.nj, 0.0f);
     v_flip_weights.assign(v.ni, v.nj, 0.0f);
     
-   
     for (int index=0;index<particles.size();index++)
     {
        
@@ -250,12 +248,7 @@ void FluidSim::transfer_particles2grid()
         {
             if (u_flip_weights(i, j) != 0.0f)
             {
-                //float b = u(i, j);
                 u(i, j) /= u_flip_weights(i, j);
-               /* float a = u_flip_weights(i, j);
-                b /= a;
-                float d = u(i, j);
-                int dddd = 1;*/
             }
            
             uDelta(i, j) = u(i, j);
@@ -268,19 +261,6 @@ void FluidSim::transfer_particles2grid()
             v(i, j) /= v_flip_weights(i, j);
             vDelta(i, j) = v(i, j);
         }
-
-    /*std::vector<float> array1;
-    for (int i = 0; i < u_flip_weights.a.size(); i++)
-    {
-        array1.push_back(u_flip_weights.a[i]);
-    }
-
-    std::vector<float> array2;
-    for (int i = 0; i < u.a.size(); i++)
-    {
-        array2.push_back(u.a[i]);
-    }
-    int a = 0;*/
 }
 
 
