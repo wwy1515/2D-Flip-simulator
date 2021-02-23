@@ -3,7 +3,7 @@
 
 Adopted the code from: [A Fast Variational Framework for Accurate Solid-Fluid Coupling](http://www.cs.ubc.ca/labs/imager/tr/2007/Batty_VariationalFluids/)
 
-![image](https://github.com/wwy1515/simplePhysicsEngine/raw/master/demo/demo.gif)
+![image](https://github.com/wwy1515/2D-Flip-simulator/raw/master/demo/demo.gif)
 
 Guide:
 1. Build a VS Falcor project named GridFluidSim under Falcor\Source\Samples with [Falcor](https://github.com/NVIDIAGameWorks/Falcor)  
